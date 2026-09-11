@@ -46,7 +46,17 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 10px);-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--ff-body);
-  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+
+/* topo-line paper texture (subtle, theme-consistent with an orienteering map) */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240"><g fill="none" stroke="%235A5F49" stroke-width="1"><path d="M-20 40 Q 60 10 120 40 T 260 40" opacity=".5"/><path d="M-20 90 Q 60 60 120 90 T 260 90" opacity=".35"/><path d="M-20 150 Q 60 120 120 150 T 260 150" opacity=".45"/><path d="M-20 200 Q 60 175 120 200 T 260 200" opacity=".3"/></g></svg>');
+  background-size:240px 240px;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),rgba(0,0,0,.15) 60%,transparent);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.9),rgba(0,0,0,.15) 60%,transparent)}
+:root[data-theme="dark"] body::before,:root:not([data-theme="light"]) body::before{opacity:.14}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) body::before{opacity:.5}}
+.nav,.hero,.marquee,.lb,.totop,.scrollbar{position:relative;z-index:1}
+main,.section,.footer,.band{position:relative;z-index:1}
 a{color:inherit}
 img{max-width:100%;display:block}
 h1,h2,h3,h4{font-family:var(--ff-disp);font-weight:700;line-height:1.02;text-wrap:balance;margin:0}
@@ -224,9 +234,22 @@ p{margin:0 0 1em}
 .band-in .qs b{color:var(--gold)}
 
 /* timeline */
-.timeline{display:grid;gap:18px}
+.timeline{display:grid;gap:18px;position:relative;padding-left:22px}
+.timeline::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:3px;
+  transform-origin:top;background:linear-gradient(180deg,var(--red),var(--gold) 40%,var(--forest) 75%,var(--olive))}
+@media (prefers-reduced-motion:no-preference){
+  .js .timeline::before{transform:scaleY(0);transition:transform 1.1s cubic-bezier(.16,.8,.24,1) .1s}
+  .js .timeline.in::before{transform:scaleY(1)}
+}
 .day{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
-  box-shadow:var(--shadow);transition:.25s}
+  box-shadow:var(--shadow);transition:.25s;position:relative}
+.day::before{content:"";position:absolute;left:-27px;top:22px;width:11px;height:11px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--magenta);z-index:2}
+@media (prefers-reduced-motion:no-preference){
+  .js .day::before{transform:scale(0);transition:transform .4s cubic-bezier(.34,1.56,.64,1) .3s}
+  .js .day.in::before{transform:scale(1)}
+}
+@media (max-width:900px){.timeline{padding-left:18px}.day::before{left:-22px;width:9px;height:9px}}
 @media (hover:hover){.day:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}}
 .day-head{display:flex;align-items:center;gap:16px;padding:17px 24px;background:var(--panel);color:var(--on-panel)}
 .day-head .dnum{font-family:var(--ff-mono);font-size:13px;opacity:.75}
@@ -514,7 +537,7 @@ p{margin:0 0 1em}
       <span class="num reveal">3–6 NOV 2026</span>
     </div>
     <p class="lead reveal" style="margin-bottom:34px">Horario provisional. Los lugares se confirmarán en el boletín técnico y en la reunión previa.</p>
-    <div class="timeline">
+    <div class="timeline reveal">
       <div class="day reveal">
         <div class="day-head"><span class="dnum">DÍA 1</span><span class="ddate">Mar 03 NOV</span><span class="dtag">Model Event</span></div>
         <div class="slot"><span class="t">10:00</span><span class="a">Apertura del Model Event <span class="loc">· Área Recreativa Cabeza Malo</span></span></div>
