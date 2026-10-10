@@ -347,6 +347,14 @@ p{margin:0 0 1em}
 .minlink.res{color:var(--panel-accent)}.minlink.gps{color:var(--gold)}
 .minlink:hover{background:currentColor}.minlink:hover span{color:var(--panel)}
 .pending{opacity:.5;pointer-events:none}
+.plat-links{display:flex;flex-direction:column;gap:8px;margin-top:2px}
+.prace{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-panel);border:1.5px solid var(--panel-border);border-radius:11px;padding:11px 14px;transition:.16s}
+.prace b{font-family:var(--ff-disp);font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.02em}
+.prace>span{font-family:var(--ff-mono);font-size:12.5px;opacity:.68}
+.prace em{margin-left:auto;font-style:normal;font-family:var(--ff-lbl);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.plat .prace.res em{color:var(--panel-accent)}.plat .prace.gps em{color:var(--gold)}
+.prace.pending{opacity:.5;pointer-events:none}
+@media (hover:hover){.prace.res:hover{border-color:var(--panel-accent);background:color-mix(in srgb,var(--panel-accent) 14%,transparent);transform:translateX(3px)}.prace.gps:not(.pending):hover{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 14%,transparent);transform:translateX(3px)}}
 .follow-note{margin-top:16px;font-size:14px;opacity:.72;font-family:var(--ff-mono)}
 .follow-note code{background:var(--panel-fill);padding:1px 6px;border-radius:5px}
 
@@ -659,30 +667,24 @@ p{margin:0 0 1em}
       <div class="plat reveal">
         <span class="badge badge-res">Resultados</span>
         <div class="pname">O-Replay</div>
-        <div class="pdesc">Clasificaciones, tiempos y parciales por control de cada prueba.</div>
-        <a class="btn btn-mag" href="https://www.oreplay.es/" target="_blank" rel="noopener">Abrir O-Replay ↗<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+        <div class="pdesc">Clasificaciones, tiempos y parciales por control. Elige la prueba:</div>
+        <div class="plat-links">
+          <a class="prace res" href="https://www.oreplay.es/competitions/44c7f317-290f-4a1f-a537-d61f7acce2bb/3eabcf3e-8a6c-4650-bda1-8e0de88a0310" target="_blank" rel="noopener"><b>Media</b><span>04 NOV</span><em>Resultados ↗</em></a>
+          <a class="prace res" href="https://www.oreplay.es/competitions/e19a098f-34fa-4110-b150-c002061b93c4/58ece958-e705-40e0-964c-3da866331d8f" target="_blank" rel="noopener"><b>Larga</b><span>05 NOV</span><em>Resultados ↗</em></a>
+          <a class="prace res" href="https://www.oreplay.es/competitions/c1b0c243-7ef7-4337-865a-8cff492e7d26/340a1e49-b42b-4aef-ab50-3912cbe5dfea" target="_blank" rel="noopener"><b>Relevo</b><span>06 NOV</span><em>Resultados ↗</em></a>
+        </div>
       </div>
       <div class="plat reveal d1">
         <span class="badge badge-gps">Análisis GPS</span>
         <div class="pname">O-Track</div>
-        <div class="pdesc">Seguimiento y análisis de la carrera con los recorridos GPS: rutas, velocidades y comparativas entre corredores.</div>
-        <a class="btn btn-gold" href="https://www.o-track.dk/es/" target="_blank" rel="noopener">Abrir O-Track ↗<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+        <div class="pdesc">Seguimiento y análisis con los recorridos GPS: rutas, velocidades y comparativas. Por prueba:</div>
+        <div class="plat-links">
+          <span class="prace gps pending"><b>Media</b><span>04 NOV</span><em>Pendiente</em></span>
+          <span class="prace gps pending"><b>Larga</b><span>05 NOV</span><em>Pendiente</em></span>
+          <span class="prace gps pending"><b>Relevo</b><span>06 NOV</span><em>Pendiente</em></span>
+        </div>
       </div>
     </div>
-    <div class="table-wrap reveal d1"><table class="follow-table">
-      <thead><tr><th>Prueba</th><th>Día</th><th>Resultados (O-Replay)</th><th>GPS (O-Track)</th></tr></thead>
-      <tbody>
-        <tr><td>Media</td><td style="font-family:var(--ff-mono)">04 NOV</td>
-          <td><a class="minlink res" href="https://www.oreplay.es/competitions/44c7f317-290f-4a1f-a537-d61f7acce2bb/3eabcf3e-8a6c-4650-bda1-8e0de88a0310" target="_blank" rel="noopener"><span>Resultados ↗</span></a></td>
-          <td><a class="minlink gps pending" href="#"><span>Pendiente</span></a></td></tr>
-        <tr><td>Larga</td><td style="font-family:var(--ff-mono)">05 NOV</td>
-          <td><a class="minlink res" href="https://www.oreplay.es/competitions/e19a098f-34fa-4110-b150-c002061b93c4/58ece958-e705-40e0-964c-3da866331d8f" target="_blank" rel="noopener"><span>Resultados ↗</span></a></td>
-          <td><a class="minlink gps pending" href="#"><span>Pendiente</span></a></td></tr>
-        <tr><td>Relevo</td><td style="font-family:var(--ff-mono)">06 NOV</td>
-          <td><a class="minlink res" href="https://www.oreplay.es/competitions/c1b0c243-7ef7-4337-865a-8cff492e7d26/340a1e49-b42b-4aef-ab50-3912cbe5dfea" target="_blank" rel="noopener"><span>Resultados ↗</span></a></td>
-          <td><a class="minlink gps pending" href="#"><span>Pendiente</span></a></td></tr>
-      </tbody>
-    </table></div>
   </div>
 </section>
 
