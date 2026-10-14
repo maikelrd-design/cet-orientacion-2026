@@ -492,6 +492,13 @@ p{margin:0 0 1em}
   .crest-row img{height:74px}
 }
 
+
+/* terreno dentro del desplegable */
+.terreno-acc{padding:6px 22px 20px}
+.terr-sub{display:flex;flex-direction:column;gap:2px;margin:6px 0 12px}
+.terr-lead{color:var(--muted);font-size:15.5px;margin:0 0 18px}
+.terreno-acc .matorral{margin:0 auto 30px}
+.terreno-acc .terr-group{margin-top:22px}
 /* terreno */
 .terreno{margin-top:46px;border-top:1px solid var(--line);padding-top:40px}
 .terreno-head{max-width:64ch;margin-bottom:24px}
@@ -749,25 +756,9 @@ p{margin:0 0 1em}
             <div style="margin-top:10px"><span class="chip">CISM</span><span class="chip">IOF</span><span class="chip">FEDO</span><span class="chip">Instrucción 78/2018</span><span class="chip">IT 01/19</span></div></div></details>
         <details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Sorteo y salidas</summary>
           <div class="body">Orden de salidas por <strong>sorteo con OE12</strong>, discriminado por Unidades y con separación de cabezas de serie. Intervalos CISM: <strong>1 min</strong> con dispersión, <strong>2 min</strong> sin dispersión.</div></details>
-        <details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Terreno y entrenamiento</summary>
-          <div class="body">La descripción del terreno se difundirá por <strong>boletín técnico</strong>. Queda <strong>prohibido</strong>, bajo pena de descalificación, entrenar o visitar las zonas de los mapas. <strong>Más abajo</strong>, fotos reales del terreno (Media y Larga).</div></details>
-      </div>
-      <div class="acc reveal d1">
-        <details open><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Inscripciones</summary>
-          <div class="body">Mediante <strong>ficha de inscripción</strong>, vía SMD (acción a JEAPRECEN, copia a SUBDIRINS · SC Preparación Física) <strong>NLT 18 OCT</strong>. <strong>No se admiten reservas.</strong> Se confirman en la reunión técnica.</div></details>
-        <details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Participación y delegaciones</summary>
-          <div class="body">Personal militar en activo, reserva (según oficio CSDM), alumnos de CDM y RV activados, con <strong>TGCF en vigor (Apto Nivel Físico)</strong>. Cada delegación: máx. <strong>1 delegado y 7 deportistas (4 M · 3 F)</strong> y mínimo <strong>5</strong> para puntuar como delegación.</div></details>
-        <details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Uniformidad</summary>
-          <div class="body">Reunión previa y clausura: <strong>chándal reglamentario del ET</strong> o específico de la UCO. Pruebas: prendas deportivas. Cada equipo forma con su <strong>Guion representativo</strong>.</div></details>
-        <details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Alojamiento y manutención</summary>
-          <div class="body">Alojamiento y manutención a través de la <strong>USAC «Coronel Sánchez Bilbao» (IGE), sin cargo</strong> para los participantes. Transporte a cargo de cada UCO o equipo de referencia.</div></details><details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Derechos de imagen</summary><div class="body">La inscripción implica la <strong>cesión de los derechos de imagen</strong> al Ejército de Tierra, de forma exclusiva y gratuita, para reproducciones gráficas y audiovisuales, internet y su promoción.</div></details>
-      </div>
-    </div>
-    <div class="terreno reveal">
-      <div class="terreno-head"><div class="divider-rule"></div><span class="eyebrow">El terreno</span>
-        <h3>Cómo es el terreno</h3>
-        <p class="lead">Fotografías reales de las zonas de competición. Haz clic para ampliar.</p></div>
-      <div class="matorral">
+        <details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Terreno</summary>
+          <div class="body">La descripción del terreno se difundirá por <strong>boletín técnico</strong>. Queda <strong>prohibido</strong>, bajo pena de descalificación, entrenar o visitar las zonas de los mapas.</div><div class="terreno-acc"><div class="terr-sub"><div class="divider-rule"></div><span class="eyebrow">Fotos del terreno</span></div><p class="terr-lead">Fotografías reales de las zonas de competición. Haz clic para ampliar.</p>
+          <div class="matorral">
         <figure tabindex="0" role="button" aria-label="Ampliar foto del matorral"><div class="mph" style="background-image:var(--i10)"></div><figcaption>En el terreno</figcaption></figure>
         <div class="mconn">El matorral verde del mapa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg> así se ve</div>
         <figure class="map" tabindex="0" role="button" aria-label="Ampliar recorte del mapa"><div class="mph" style="background-image:var(--i11)"></div><figcaption>En el mapa</figcaption></figure>
@@ -782,8 +773,20 @@ p{margin:0 0 1em}
           <figure tabindex="0" role="button" aria-label="Ampliar foto"><div class="mph" style="background-image:var(--i15)"></div></figure>
           <figure tabindex="0" role="button" aria-label="Ampliar foto"><div class="mph" style="background-image:var(--i16)"></div></figure>
           <figure tabindex="0" role="button" aria-label="Ampliar foto"><div class="mph" style="background-image:var(--i17)"></div></figure>
-        </div></div>
+        </div></div></div></details>
+      </div>
+      <div class="acc reveal d1">
+        <details open><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Inscripciones</summary>
+          <div class="body">Mediante <strong>ficha de inscripción</strong>, vía SMD (acción a JEAPRECEN, copia a SUBDIRINS · SC Preparación Física) <strong>NLT 18 OCT</strong>. <strong>No se admiten reservas.</strong> Se confirman en la reunión técnica.</div></details>
+        <details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Participación y delegaciones</summary>
+          <div class="body">Personal militar en activo, reserva (según oficio CSDM), alumnos de CDM y RV activados, con <strong>TGCF en vigor (Apto Nivel Físico)</strong>. Cada delegación: máx. <strong>1 delegado y 7 deportistas (4 M · 3 F)</strong> y mínimo <strong>5</strong> para puntuar como delegación.</div></details>
+        <details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Uniformidad</summary>
+          <div class="body">Reunión previa y clausura: <strong>chándal reglamentario del ET</strong> o específico de la UCO. Pruebas: prendas deportivas. Cada equipo forma con su <strong>Guion representativo</strong>.</div></details>
+        <details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Alojamiento y manutención</summary>
+          <div class="body">Alojamiento y manutención a través de la <strong>USAC «Coronel Sánchez Bilbao» (IGE), sin cargo</strong> para los participantes. Transporte a cargo de cada UCO o equipo de referencia.</div></details><details><summary><svg class="mk2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>Derechos de imagen</summary><div class="body">La inscripción implica la <strong>cesión de los derechos de imagen</strong> al Ejército de Tierra, de forma exclusiva y gratuita, para reproducciones gráficas y audiovisuales, internet y su promoción.</div></details>
+      </div>
     </div>
+    
   </div>
 </section>
 
@@ -1011,7 +1014,7 @@ document.documentElement.classList.add('js');
   },{passive:true});
   // terreno lightbox
   (function(){var lb=document.getElementById("lb"),im=document.getElementById("lbImg"),cp=document.getElementById("lbCap");
-   if(!lb)return;[].slice.call(document.querySelectorAll(".terreno figure")).forEach(function(f){
+   if(!lb)return;[].slice.call(document.querySelectorAll(".terreno-acc figure")).forEach(function(f){
      function op(){var ph=f.querySelector(".mph");if(!ph)return;var m=getComputedStyle(ph).backgroundImage.match(/url\(["\x27]?(.*?)["\x27]?\)/);if(m){im.src=m[1];var c=f.querySelector("figcaption");cp.textContent=c?c.textContent:"";lb.classList.add("open");lb.setAttribute("aria-hidden","false");}}
      f.addEventListener("click",op);f.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();op();}});
    });})();
