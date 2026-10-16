@@ -11,7 +11,7 @@
 </style></head><body><div id="map"></div>
 <script>
 var map=L.map('map',{zoomControl:false,attributionControl:false});
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(map);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:19}).addTo(map);
 var pts=[
  {k:'MEDIA · Umbría de Fresnedas', lat:38.585, lon:-3.66157, c:'#58a618'},
  {k:'LARGA · Peñas Negrillas',     lat:38.42322, lon:-3.49377, c:'#1f76c4'},
